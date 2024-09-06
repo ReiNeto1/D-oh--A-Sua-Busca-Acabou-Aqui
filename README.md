@@ -1,9 +1,14 @@
-Aqui está um exemplo de um arquivo `README.md` para o código HTML e JavaScript fornecido. Ele descreve o projeto, como ele funciona e como utilizá-lo.
+|-- index.html          # Página principal do projeto
+|-- style.css           # Estilos para a página
+|-- app.js              # Lógica JavaScript para interatividade
+|-- dados.js            # Dados dos personagens
+|-- /simpsons.jpg       # Imagem de fundo dos Simpsons
+
 
 ```markdown
 # D'oh! A Sua Busca Acabou Aqui
 
-Este projeto é uma página web interativa para buscar informações sobre personagens dos Simpsons. O usuário pode digitar um termo no campo de pesquisa e visualizar os resultados baseados nos dados fornecidos.
+Este projeto é uma aplicação web simples que permite aos usuários buscar informações sobre personagens da série Os Simpsons. Os usuários podem pesquisar personagens principais e também visualizar outros personagens clicando em um botão adicional.
 
 ## Estrutura do Projeto
 
@@ -44,10 +49,11 @@ Exemplo de um objeto de dado:
 
 ## Como Usar
 
-1. Clone este repositório ou faça o download dos arquivos.
-2. Abra o arquivo `index.html` em um navegador da web.
-3. Digite o nome de um personagem dos Simpsons no campo de pesquisa e clique no botão "Pesquisar".
-4. Os resultados serão exibidos na parte inferior da página, com links para mais informações sobre cada personagem.
+# Pesquisa de Personagem:
+ Na página inicial, digite o nome de um personagem na barra de pesquisa e clique em "Pesquisar". Se o personagem for encontrado, sua descrição será exibida.
+
+# Outros Personagens:
+ Clique no botão "Outros Personagens" para visualizar personagens adicionais.
 
 ## Tecnologias Utilizadas
 

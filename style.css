@@ -80,7 +80,21 @@ section button {
     color: #F5F7F8; /* Cor do texto do botão */
     font-size: 1rem; /* Tamanho da fonte */
     cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    margin-right: 10rem;
 }
+
+.outros {
+    padding: 0.8rem 1.2rem; /* Espaçamento interno do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 1.5rem; /* Borda arredondada */
+    background-color: #f3dc08; /* Cor de fundo do botão */
+    color: #000000; /* Cor do texto do botão */
+    font-size: 1rem; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    margin-right: -10rem; /* Ajuste do espaçamento à direita */
+    margin-top: -42px;
+}
+
 
 /* Adiciona efeito hover ao botão de pesquisa */
 section button:hover {
@@ -97,7 +111,7 @@ section button:hover {
     margin-top: 1rem; /* Espaçamento acima da caixa de resultados */
     padding: 1rem; /* Espaçamento interno */
     border-radius: 0.6rem; /* Borda arredondada */
-    margin-left: -50rem;
+    margin-left: -30rem;
 }
 
 /* Estiliza cada item de resultado */

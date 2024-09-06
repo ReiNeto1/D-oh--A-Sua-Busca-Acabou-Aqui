@@ -1,31 +1,42 @@
 function pesquisar() {
-    // Obtém a seção onde os resultados da pesquisa serão exibidos
-    // pelo seu ID e armazena em uma variável.
-    let section = document.getElementById("resultados-pesquisa");
-  
-    // Loga os dados no console para fins de depuração. 
-    // Isso é útil durante o desenvolvimento para verificar se os dados estão sendo carregados corretamente.
-    console.log(dados);
-  
-    // Inicializa uma string vazia para armazenar o HTML dos resultados.
-    // Essa string será preenchida com os elementos HTML gerados.
-    let resultados = "";
-  
-    // Itera sobre cada item (personagem) no array de dados.
-    // Para cada item, cria um novo elemento HTML e o adiciona à string 'resultados'.
-    for (let dado of dados) {
-      resultados += `
-        <div class="item-resultado">
-          <h2>
-            <a href="#" target="_blank">${dado.titulo}</a>
-          </h2>
-          <p class="descricao-meta">${dado.descrição}</p>
-          <a href="${dado.link}" target="_blank">Saiba mais</a>
-        </div>
-      `;
-    }
-  
-    // Atribui o conteúdo da string 'resultados' ao HTML interno da seção.
-    // Isso substitui o conteúdo anterior da seção pelos novos elementos HTML.
-    section.innerHTML = resultados;
+  // Obtém a seção onde os resultados da pesquisa serão exibidos
+  let section = document.getElementById("resultados-pesquisa");
+  let campoPesquisa = document.getElementById("campo-pesquisa").value;
+
+  // Verifica se o campo de pesquisa está vazio
+  if (campoPesquisa == "") {
+      section.innerHTML = "<p>Nada foi encontrado.</p>";
+      return;
   }
+
+  // Transforma o valor do campo de pesquisa em minúsculas
+  campoPesquisa = campoPesquisa.toLowerCase();
+
+  // Inicializa uma string vazia para armazenar o HTML dos resultados
+  let resultados = "";
+
+  // Itera sobre cada item (personagem) no array de dados
+  for (let dado of dados) {
+      let titulo = dado.titulo.toLowerCase();
+      let descricao = dado.descrição.toLowerCase();
+      let tags = dado.tags.toLowerCase();
+
+      // Verifica se o título, descrição ou tags incluem o valor da pesquisa
+      if (titulo.includes(campoPesquisa) || descricao.includes(campoPesquisa) || tags.includes(campoPesquisa)) {
+          resultados += `
+          <div class="item-resultado">
+              <h2>${dado.titulo}</h2>
+              <p class="descricao-meta">${dado.descrição}</p>
+              <a href="${dado.link}" target="_blank">Saiba mais</a>
+          </div>`;
+      }
+  }
+
+  // Caso não haja resultados correspondentes
+  if (resultados === "") {
+      resultados = "<p>Personagem não encontrado ou não faz parte da família principal.</p>";
+  }
+
+  // Exibe os resultados na seção de pesquisa
+  section.innerHTML = resultados;
+}
